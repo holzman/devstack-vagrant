@@ -13,62 +13,18 @@ apt-get -y install libxml2-dev libxslt-dev libmysqlclient-dev
 su vagrant -c 'cd ~vagrant; git clone git://github.com/openstack-dev/devstack.git'
 su vagrant -c 'cp -f /vagrant/localrc ~/devstack'
 
-# # clones
 mkdir /opt/stack
 chown vagrant:vagrant /opt/stack
-# su vagrant -c 'git clone https://github.com/openstack-dev/pbr.git /opt/stack/pbr'
-# su vagrant -c 'git clone https://github.com/openstack/oslo.config.git /opt/stack/oslo.config'
-# su vagrant -c 'git clone https://github.com/openstack/oslo.messaging.git /opt/stack/oslo.messaging'
-# su vagrant -c 'git clone https://github.com/openstack/python-keystoneclient.git /opt/stack/python-keystoneclient'
-# su vagrant -c 'git clone https://github.com/openstack/python-glanceclient.git /opt/stack/python-glanceclient'
-# su vagrant -c 'git clone https://github.com/openstack/python-cinderclient.git /opt/stack/python-cinderclient'
-# su vagrant -c 'git clone https://github.com/openstack/python-novaclient.git /opt/stack/python-novaclient'
-# su vagrant -c 'git clone https://github.com/openstack/python-swiftclient.git /opt/stack/python-swiftclient'
-# su vagrant -c 'git clone https://github.com/openstack/python-neutronclient.git /opt/stack/python-neutronclient'
-# su vagrant -c 'git clone https://github.com/openstack/python-heatclient.git /opt/stack/python-heatclient'
-# su vagrant -c 'git clone https://github.com/openstack/python-openstackclient.git /opt/stack/python-openstackclient'
-# su vagrant -c 'git clone https://github.com/openstack/keystone.git /opt/stack/keystone'
-# su vagrant -c 'git clone https://github.com/openstack/glance.git /opt/stack/glance'
-# su vagrant -c 'git clone https://github.com/openstack/cinder.git /opt/stack/cinder'
-# su vagrant -c 'git clone https://github.com/openstack/nova.git /opt/stack/nova'
-# su vagrant -c 'git clone https://github.com/kanaka/noVNC.git /opt/stack/noVNC'
-# su vagrant -c 'git clone https://github.com/openstack/horizon.git /opt/stack/horizon'
-# su vagrant -c 'git clone https://github.com/openstack/tempest.git /opt/stack/tempest'
-
-# #pips
-# export PIP_DOWNLOAD_CACHE=/var/cache/pip
-# pip install --use-mirrors -r /opt/stack/pbr/requirements.txt
-# pip install --use-mirrors -r /opt/stack/oslo.config/requirements.txt
-# pip install --use-mirrors -r /opt/stack/oslo.messaging/requirements.txt
-# pip install --use-mirrors -r /opt/stack/python-keystoneclient/requirements.txt
-# pip install --use-mirrors -r /opt/stack/python-glanceclient/requirements.txt
-# pip install --use-mirrors -r /opt/stack/python-cinderclient/requirements.txt
-# pip install --use-mirrors -r /opt/stack/python-novaclient/requirements.txt
-# pip install --use-mirrors -r /opt/stack/python-swiftclient/requirements.txt
-# pip install --use-mirrors -r /opt/stack/python-neutronclient/requirements.txt
-# pip install --use-mirrors -r /opt/stack/python-heatclient/requirements.txt
-# pip install --use-mirrors -r /opt/stack/python-openstackclient/requirements.txt
-# pip install --use-mirrors -r /opt/stack/keystone/requirements.txt
-# pip install --use-mirrors -r /opt/stack/glance/requirements.txt
-# pip install --use-mirrors -r /opt/stack/cinder/requirements.txt
-# pip install --use-mirrors -r /opt/stack/nova/requirements.txt
-# pip install --use-mirrors -r /opt/stack/horizon/requirements.txt
-# pip install --use-mirrors -r /opt/stack/tempest/requirements.txt
-
-
-# su vagrant -c 'git clone git://github.com/openstack-dev/devstack.git'
-#apt-get -y install libxml2-dev libxslt-dev libmysqlclient-dev
-#su vagrant -c 'for i in cinder glance horizon keystone python-cinderclient python-glanceclient python-keystoneclient python-neutronclient python-novaclient python-openstackclient python-swiftclient tempest; do cd /opt/stack/$i && git pull origin master; done'
-
-#su vagrant -c 'cd && git clone git://github.com/eucalyptus/euca2ools'
-#cd ~vagrant/euca2ools && python setup.py install
-#python /vagrant/ez_setup.py
-
 #cd /opt/stack/nova
 #su vagrant -c 'git remote add bh git://github.com/holzman/nova.git'
 #su vagrant -c 'git fetch bh'
 
-##### su vagrant -c 'cd ~/devstack && ./stack.sh'
+#euca2ools
+#su vagrant -c 'cd && git clone git://github.com/eucalyptus/euca2ools'
+#cd ~vagrant/euca2ools && python setup.py install
+#python /vagrant/ez_setup.py
+
+su vagrant -c 'cd ~/devstack && ./stack.sh'
 #echo "OS_USERNAME=admin keystone tenant-list" >> /tmp/tl
 #su vagrant -c 'cd /opt/stack/tempest && testr run --parallel'
 
