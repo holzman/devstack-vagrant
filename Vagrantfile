@@ -24,7 +24,6 @@ chown vagrant:vagrant /opt/stack
 #cd ~vagrant/euca2ools && python setup.py install
 #python /vagrant/ez_setup.py
 
-su vagrant -c 'cd ~/devstack && ./stack.sh'
 #echo "OS_USERNAME=admin keystone tenant-list" >> /tmp/tl
 #su vagrant -c 'cd /opt/stack/tempest && testr run --parallel'
 
@@ -32,6 +31,8 @@ for pw in ADMIN_PASSWORD MYSQL_PASSWORD RABBIT_PASSWORD SERVICE_PASSWORD SERVICE
 do
     echo $pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1) >> ~vagrant/devstack/localrc
 done
+
+su vagrant -c 'cd ~/devstack && ./stack.sh'
 
 SCRIPT
 
